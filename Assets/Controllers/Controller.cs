@@ -5,21 +5,22 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public float[] TpLocation= new float[2];
-    private float RandomSound;
+    //private float RandomSound;
     public bool touched = false;
-    public AudioClip dieLikeAGoat;
+    /*public AudioClip dieLikeAGoat;
     public AudioClip boing1;
     public AudioClip boing2;
     public AudioClip boing3;
     public AudioClip boing4;
     public AudioClip boing5;
-    public AudioClip boing6;
+    public AudioClip boing6;*/
     public AudioClip splash;
     public AudioSource deathSound;
     public string
         moveHorizontal, moveVertical, cameraHorizontal, jumpAround;
     public bool isAlive = true;
     bool Jump = false;
+
     public void FixedUpdate()
     {
         GetComponent<Rigidbody>().AddForce(Physics.gravity * GetComponent<Rigidbody>().mass * 10);
@@ -49,7 +50,7 @@ public class Controller : MonoBehaviour
         {
             var x = Input.GetAxis(moveHorizontal) * Time.deltaTime * 8.0f;
             var z = Input.GetAxis(moveVertical) * Time.deltaTime * 8.0f;
-            var g = Input.GetAxis(cameraHorizontal) * Time.deltaTime * 300.0f;
+            var g = Input.GetAxis(cameraHorizontal) * Time.deltaTime * 150.0f;
             transform.Translate(0, 0, z);
             transform.Translate(-x, 0, 0);
             transform.Rotate(0, -g, 0);
@@ -57,7 +58,7 @@ public class Controller : MonoBehaviour
             {
                 GetComponent<Rigidbody>().velocity = Vector3.up * 5;
                 Jump = true;
-                WhatToSay();
+                //WhatToSay();
             }
         }
     }
@@ -82,7 +83,7 @@ public class Controller : MonoBehaviour
             {
                 transform.GetChild(2).gameObject.SetActive(true);
             }*/
-            deathSound.PlayOneShot(dieLikeAGoat);
+            //deathSound.PlayOneShot(dieLikeAGoat);
             WhereToGo();
 
             /*isAlive = false;
@@ -109,7 +110,7 @@ public class Controller : MonoBehaviour
         transform.position = new Vector3(TpLocation[0], 9, TpLocation[1]);
     }
     
-    void WhatToSay()
+    /*void WhatToSay()
     {
         RandomSound = Random.Range(0, 60);
         if (RandomSound <= 10)
@@ -136,5 +137,5 @@ public class Controller : MonoBehaviour
         {
             deathSound.PlayOneShot(boing6);
         }
-    }
+    }*/
 }

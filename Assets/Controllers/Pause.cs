@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
+    public int NumberWinner;
     public static Pause s_Singleton;
     private List<int> Scores = new List<int>();
     public bool IsActive = false;
@@ -26,9 +27,11 @@ public class Pause : MonoBehaviour
         {
             s_Singleton = this;
         }
+        DontDestroyOnLoad(this.gameObject);
     }
     void Start()
     {
+        NumberWinner = 0;
         pausePanel.SetActive(false);
         for (var i = 0; i < 4; i++)
         {
@@ -37,7 +40,11 @@ public class Pause : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetButtonDown(PauseButton))
+        if (SceneManager.GetActiveScene().name == "Menu" || SceneManager.GetActiveScene().name == "PlayerNumber")
+        {
+            Destroy(this.gameObject);
+        }
+            if (Input.GetButtonDown(PauseButton))
         {
             if (!pausePanel.activeInHierarchy)
             {
@@ -83,20 +90,21 @@ public class Pause : MonoBehaviour
         {
             if (P1Score > P2Score && P1Score > P3Score && P1Score > P4Score)
             {
-                SceneManager.LoadScene("P1_wins");
+                NumberWinner = 1;
             }
             if (P2Score > P1Score && P2Score > P3Score && P2Score > P4Score)
             {
-                SceneManager.LoadScene("P2_wins");
+                NumberWinner = 2;
             }
             if (P3Score > P2Score && P3Score > P1Score && P3Score > P4Score)
             {
-                SceneManager.LoadScene("P3_wins");
+                NumberWinner = 3;
             }
             if (P4Score > P2Score && P4Score > P3Score && P4Score > P1Score)
             {
-                SceneManager.LoadScene("P4_wins");
+                NumberWinner = 4;
             }
+            SceneManager.LoadScene("WinnerScene");
         }
 
     }
