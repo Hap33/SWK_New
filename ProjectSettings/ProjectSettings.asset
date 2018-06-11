@@ -545,12 +545,16 @@ PlayerSettings:
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 1
   webGLLinkerTarget: 0
+<<<<<<< HEAD
   scriptingDefineSymbols:
     1: CROSS_PLATFORM_INPUT
     4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
     7: CROSS_PLATFORM_INPUT;MOBILE_INPUT
     14: MOBILE_INPUT
     17: MOBILE_INPUT
+=======
+  scriptingDefineSymbols: {}
+>>>>>>> c2c2f1a46906629ec1be356cf8175227a5d0b993
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
