@@ -38,5 +38,9 @@ public class WakeUp : MonoBehaviour
             timeLeft = 5.0f;
         }
     }
-   
+    void OnDisable()
+    {
+        IsActive = false;
+    }
+
 }

@@ -6471,6 +6471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a77c240628f7a8843a7bcd6dcd52c79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sword: {fileID: 1584736211}
   TpLocation:
   - 0
   - 0
@@ -12739,6 +12740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a77c240628f7a8843a7bcd6dcd52c79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sword: {fileID: 1793894969}
   TpLocation:
   - 0
   - 0
@@ -23088,6 +23090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a77c240628f7a8843a7bcd6dcd52c79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sword: {fileID: 1193122085}
   TpLocation:
   - 0
   - 0
@@ -24607,6 +24610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a77c240628f7a8843a7bcd6dcd52c79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sword: {fileID: 785898075}
   TpLocation:
   - 0
   - 0

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
+    public GameObject Sword;
+    public WakeUp epee;
     public float[] TpLocation= new float[2];
     //private float RandomSound;
     public bool touched = false;
@@ -77,6 +79,7 @@ public class Controller : MonoBehaviour
             transform.position = new Vector3(TpLocation[0], 9, TpLocation[1]);
             if (col.gameObject.tag == "Water")
             {
+                Sword.SetActive(false);
                 deathSound.PlayOneShot(splash);
             }
             /*if (col.gameObject.name == "sword kinda")
