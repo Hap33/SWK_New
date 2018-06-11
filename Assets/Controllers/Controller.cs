@@ -5,7 +5,6 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public GameObject Sword;
-    public WakeUp epee;
     public float[] TpLocation= new float[2];
     //private float RandomSound;
     public bool touched = false;
