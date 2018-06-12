@@ -5,6 +5,11 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public GameObject Sword;
+    public float RangeX1;
+    public float RangeX2;
+    public float RangeY1;
+    public float RangeY2;
+    public float Height;
     public float[] TpLocation= new float[2];
     //private float RandomSound;
     public bool touched = false;
@@ -38,8 +43,8 @@ public class Controller : MonoBehaviour
     void WhereToGo()
     {
        
-        TpLocation[0] = Random.Range(-90f, 105);
-        TpLocation[1] = Random.Range(-95f, 100);
+        TpLocation[0] = Random.Range(RangeX1, RangeX2);
+        TpLocation[1] = Random.Range(RangeY1, RangeY2);
     }
     void Start()
     {
@@ -75,7 +80,7 @@ public class Controller : MonoBehaviour
         }
         if (col.gameObject.name == "sword kinda"&& touched == false && col.gameObject.tag != gameObject.tag|| col.gameObject.tag == "Water")
         {
-            transform.position = new Vector3(TpLocation[0], 9, TpLocation[1]);
+            transform.position = new Vector3(TpLocation[0], Height, TpLocation[1]);
             if (col.gameObject.tag == "Water")
             {
                 Sword.SetActive(false);
@@ -109,7 +114,7 @@ public class Controller : MonoBehaviour
     }
     void AboveWater() {
         WhereToGo();
-        transform.position = new Vector3(TpLocation[0], 9, TpLocation[1]);
+        transform.position = new Vector3(TpLocation[0], Height, TpLocation[1]);
     }
     
     /*void WhatToSay()
